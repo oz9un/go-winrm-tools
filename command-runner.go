@@ -63,10 +63,10 @@ func pass_getter(input_message string) string {
 }
 
 func main() {
-	ip_address := input_getter("Enter the target IP address: ")
+	ip_address := input_getter("Enter the target machine's IP address: ")
 	port_no := input_getter("Enter the target port (5986 or 5985): ")
-	username := input_getter("Enter your username: ")
-	password := pass_getter("Enter your password: ")
+	username := input_getter("Enter target machine's username: ")
+	password := pass_getter("Enter target machine's password: ")
 	int_port_no, _ := strconv.Atoi(port_no)
 	command := input_getter("\nCommand to be executed: ")
 
