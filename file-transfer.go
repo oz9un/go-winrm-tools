@@ -3,8 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
-	"net"
 	"os"
 	"os/exec"
 	"strconv"
