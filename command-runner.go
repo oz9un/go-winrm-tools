@@ -23,8 +23,9 @@ func command_runner(slaveIP string, slavePort int, command string, username stri
 		panic(err)
 	}
 
-	stdout, _, _, _ := client.RunPSWithString(command, "")
+	stdout, _, _, err := client.RunPSWithString(command, "")
 	if strings.TrimSpace(stdout) == "" {
+		fmt.Println(err)
 		fmt.Println(stdout)
 	}
 
@@ -63,10 +64,10 @@ func pass_getter(input_message string) string {
 }
 
 func main() {
-	ip_address := input_getter("Enter the target machine's IP address: ")
+	ip_address := input_getter("Enter the target IP address: ")
 	port_no := input_getter("Enter the target port (5986 or 5985): ")
-	username := input_getter("Enter target machine's username: ")
-	password := pass_getter("Enter target machine's password: ")
+	username := input_getter("Enter your username: ")
+	password := pass_getter("Enter your password: ")
 	int_port_no, _ := strconv.Atoi(port_no)
 	command := input_getter("\nCommand to be executed: ")
 
